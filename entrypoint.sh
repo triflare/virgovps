@@ -7,7 +7,7 @@ if [ -z "$VIRGO_PASS" ]; then
 fi
 
 # apply password to virgo
-echo "virgo:$VIRGO_PASS" | chpasswd
+printf '%s\n' "virgo:$VIRGO_PASS" | chpasswd
 
 # generate SSH Host keys if they don't exist
 ssh-keygen -A
